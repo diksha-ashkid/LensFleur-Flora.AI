@@ -1,2 +1,2 @@
-# Centuriton-Hackathon_Flore.AI
+# Centuriton-Hackathon_Flora.AI
 
