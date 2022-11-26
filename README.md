@@ -4,7 +4,7 @@
 
 This repository contains the code for the Centuriton-Hackathon Flora.AI project. The project is a web application that allows users to upload images of plants and receive information about the plant. The user can also upload images of plants that they have grown and receive information about the plant and the best way to grow it. The project is built using the Flask framework and InceptionV3 model.
 
-The project has many innovative features such as chat-window, which allows users to ask questions and receive answers, The main part is the image recognition, which allows users to upload images of plants and receive information about the plant. Once the image has been recognized it provides the information along with the geographical location of the plant. Hence if there is a large scale outbreak of a desease, the location can be marked and further actions can be taken.
+The project has many innovative features such as chat-window, which allows users to ask questions and receive answers, The main part is the image recognition, which allows users to upload images of plants and receive information about the plant. Once the image has been recognized it provides the information along with the geographical location of the plant. Hence if there is a large scale outbreak of a disease, the location can be marked and further actions can be taken.
 
 ## 2. Installation
 
