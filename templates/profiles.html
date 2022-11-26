@@ -42,7 +42,7 @@ html{
 }
 
 body{
-    background-image: url("header.jpg");
+    background-image: url("{{url_for('static',filename='/header.jpg')}}");
 }
 body{
     top: 0px !important; 
@@ -525,7 +525,7 @@ header .fa-bars{
 <header>
     <input type="checkbox" name="" id="toggler">
     <label for="toggler" class="fas fa-bars"></label>
-    <a href="#" class="logo">LENS<span>FLEUR</span></a>
+    <a href="{{url_for('home')}}" class="logo">LENS<span>FLEUR</span></a>
     <nav class="navbar">
         <a href="#">LIST OF EXPERTS</a>
     
@@ -545,7 +545,7 @@ header .fa-bars{
             </label>
         </div>
         <div class="gow-img-div img-div">
-           <a  href = "index13.html"><img src="g13.png"></a>
+           <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/g13.png')}}"></a>
         </div>
         <div class="text-container">
             <h2 class="item-name">Dr ABC</h2>
@@ -564,7 +564,7 @@ header .fa-bars{
             </label>
         </div>
         <div class="gow-img-div img-div">
-            <a  href = "index13.html"><img src="profic.png"></a>
+            <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/profic.png')}}"></a>
         </div>
         <div class="text-container">
             <h2 class="item-name">Dr DEF</h2>
@@ -583,7 +583,7 @@ header .fa-bars{
             </label>
         </div>
         <div class="gow-img-div img-div">
-            <a  href = "index13.html"><img src="g13.png"></a>
+            <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/g13.png')}}"></a>
         </div>
         <div class="text-container">
             <h2 class="item-name">Dr GHI</h2>

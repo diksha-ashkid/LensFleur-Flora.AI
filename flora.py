@@ -48,6 +48,10 @@ def home():
 def product():
     return render_template('Product.html')
 
+@app.route('/profile', methods = ['GET', 'POST'])
+def profile():
+    return render_template('profiles.html')
+
 @app.route('/chat', methods = ['GET', 'POST'])
 def chat():
     return render_template('chat.html')
