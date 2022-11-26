@@ -46,8 +46,8 @@ The project will be running on `http://127.0.0.1:3000/`
 
 ## 4. Contributors
 
-  * [Diksha Chakravarthy](@diksha-ashkid)
-  * [Aakash Rajaraman](@aakashrajaraman)
-  * [Yashas S](@Yashas2001)
-  * [Nishtha Jain](@2002nishthajain)
+  * [Diksha Chakravarthy](https://github.com/diksha-ashkid)
+  * [Aakash Rajaraman](https://github.com/aakashrajaraman)
+  * [Yashas S](https://github.com/Yashas2001)
+  * [Nishtha Jain](https://github.com/2002nishthajain)
 
