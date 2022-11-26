@@ -32,8 +32,7 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato Septoria leaf spot', 'Tomato Spider mites', 
          'Tomato Target Spot', 'Tomato Yellow Leaf Curl Virus', 
          'Tomato mosaic virus', 'Tomato healthy']
-model = load_model("C:/Users/aakas/Downloads/model_finetuned.h5")
-info = pd.read_csv("C:/Users/aakas/Desktop/programs/NNs/dict.csv")
+model = load_model("model_finetuned.h5")
 @app.route('/', methods = ['GET'])
 def hello_world():
     return render_template('index1.html')
@@ -66,6 +65,6 @@ def predict():
     else:
         geolocation = "No GPS Data"
     q = "info"
-    return render_template('results1.html', prediction=prediction, geolocation=geolocation)
+    return render_template('Result.html', prediction=prediction, geolocation=geolocation)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
