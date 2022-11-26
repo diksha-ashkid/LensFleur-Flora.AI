@@ -85,8 +85,9 @@ def predict():
         geolocation= geocoder.reverse(coord)
     else:
         geolocation = "No GPS Data"
-    q = "info"
-    return render_template('Result.html', prediction=prediction, geolocation=geolocation)
+    file = open("static\\" + prediction + ".txt", "r") 
+    description = file.read()
+    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
     

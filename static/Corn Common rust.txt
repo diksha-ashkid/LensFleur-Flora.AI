@@ -1,4 +1,3 @@
-Corn Common rust
 
 Basics: Common rust frequently occurs in the northern U.S. in mid to later summer. It rarely reaches levels that cause yield loss in commercial hybrids. It is most problematic during prolonged periods of cool, wet weather. Rust diseases are generally easy to identify by the appearance of brown pustules. The common rust fungus overwinters in the southern U.S. and Mexico. Urediniospores are blown north to the Midwestern Corn Belt in the summer and infection occurs in June or July. Young leaves are most susceptible to infection and pustules are more likely to form after corn silking. The disease favors cool temperatures (60 - 76 degrees F), heavy dews, about six hours of leaf wetness, and relative humidity greater than 95 percent. Temperatures above 80 degrees F suppress disease development and spread.
 

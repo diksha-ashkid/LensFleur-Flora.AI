@@ -287,7 +287,6 @@
       <a href="{{url_for('product')}}">PRODUCTS</a>
       <a href="{{url_for('chat')}}">EXPERT CHATS</a>
       <a href="#">LOGIN/REGISTRATION</a>
-      <a href="#">FEEDBACK</a>
     </nav>
   </header>
   <h1 class="heading"></h1>
@@ -300,6 +299,10 @@
       {% endif %}
     </div>
     <div class="box">
+      {% if description %}
+      <h3 class="two">{{description}}</h3>
+      {% endif %}
+    <div class="box">
       {% if geolocation %}
       <h3 class="two">{{geolocation}}</h3>
       {% endif %}
@@ -310,20 +313,4 @@
 </body>
 
 </html>
-<!--
 
-                <div  class="a"><p>LABEL:</p>
-                {% if prediction %}
-                <h3 class="two">{{prediction.title()}}</h3>
-                {% endif %}
-                </div>
-                <br><br><br><br>
-                <div  class="a.center"><p>GEOLOCATION:</p>
-                    {% if geolocation %}
-                    <h3 class="two">{{geolocation}}</h3>
-                    {% endif %}</div>
-                <br><br><br><br>
-                
-                </body>
-                </html>
-              -->
