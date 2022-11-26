@@ -33,9 +33,26 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato Target Spot', 'Tomato Yellow Leaf Curl Virus', 
          'Tomato mosaic virus', 'Tomato healthy']
 model = load_model("model_finetuned.h5")
+
+
+
 @app.route('/', methods = ['GET'])
 def hello_world():
     return render_template('index1.html')
+
+@app.route('/home', methods = ['GET', 'POST'])
+def home():
+    return render_template('index1.html')
+
+@app.route('/product', methods = ['GET', 'POST'])
+def product():
+    return render_template('Product.html')
+
+@app.route('/chat', methods = ['GET', 'POST'])
+def chat():
+    return render_template('chat.html')
+
+
 @app.route('/', methods = ['POST'])
 def predict():
     # Get the data from the POST request.
@@ -68,3 +85,4 @@ def predict():
     return render_template('Result.html', prediction=prediction, geolocation=geolocation)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
+    

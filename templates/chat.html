@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<style>
+    body {
+        top: 0px !important;
+        position: static !important;
+    }
+
+    .goog-te-banner-frame {
+        display: none !important
+    }
+
+    body {
+        background-image: url("{{url_for('static',filename='/2.jpg')}}");
+        background-size: 100% 100%;
+        animation: gradient 5s ease infinite;
+        height: 100vh;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 20px;
+        color: white;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    input[type=text] {
+        width: 50%;
+        padding: 12px 20px;
+        margin: 13px 0;
+        box-sizing: border-box;
+        border: 2px solid rgb(3, 193, 70);
+        border-radius: 4px;
+    }
+
+    .button {
+        border-radius: 3rem;
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+    }
+
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    h1 {
+        color: #052006;
+    }
+
+    table {
+        background-color: white;
+        align-content: center;
+    }
+
+    .heading {
+        text-align: center;
+        font-size: 4rem;
+        color: rgb(4, 48, 3);
+        padding: 1rem;
+        margin: 2rem 0;
+        background: #53b71135;
+        ;
+    }
+
+    .heading span {
+        color: #0f2400;
+        ;
+    }
+</style>
+
+<body style="text-align: center" id="google_element">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var socket = io.connect("localhost:5000");
+            socket.on('connect', function () {
+                socket.send("User connected!");
+            });
+            socket.on('message', function (data) {
+                $('#messages').append($('<p>').text(data));
+            });
+            $('#sendBtn').on('click', function () {
+                socket.send($('#username').val() + " : " + $('#message').val());
+                $('#message').val('');
+            });
+            //get messages from server
+        })
+
+    </script>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <table align="center" height="600" valign="center" width="500" style="background-color :rgba(3, 193, 70, 0.295)">
+        <tr>
+            <td>
+                <h1 class="heading"> EXPERT <span>CHAT</span> </h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="messages"></div>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" id="username" placeholder="Username"></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="message" placeholder="Message"></td>
+        </tr>
+        <tr>
+            <td>
+                <button id="sendBtn" class="button button1">Send</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="message"></p>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement("google_element");
+        }
+    </script>
+</body>
+
+</html>

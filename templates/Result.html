@@ -281,16 +281,16 @@
   <header>
     <input type="checkbox" name="" id="toggler">
     <label for="toggler" class="fas fa-bars"></label>
-    <a href="#" class="logo">LENS<span>FLEUR</span></a>
+    <a href="{{url_for('home')}}" class="logo">LENS<span>FLEUR</span></a>
     <nav class="navbar">
-      <a href="#">HOME</a>
-      <a href="#">PRODUCTS</a>
-      <a href="#">EXPERT CHATS</a>
+      <a href="{{url_for('home')}}">HOME</a>
+      <a href="{{url_for('product')}}">PRODUCTS</a>
+      <a href="{{url_for('chat')}}">EXPERT CHATS</a>
       <a href="#">LOGIN/REGISTRATION</a>
       <a href="#">FEEDBACK</a>
     </nav>
   </header>
-  <h1 class="heading""></h1>
+  <h1 class="heading"></h1>
   <section class="products" id="R">
     <h1 class="heading">PLANT DISEASE<br /><span style="color:#54b711;">DETECTION RESULTS</span></h1>
 
