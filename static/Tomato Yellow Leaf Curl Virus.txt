@@ -1,0 +1,21 @@
+Basics: Tomato yellow leaf curl virus is undoubtedly one of the most damaging pathogens of tomato, and it limits production of tomato in many tropical and subtropical areas of the world. It is also a problem in many countries that have a Mediterranean climate such as California. Thus, the spread of the virus throughout California must be considered as a serious potential threat to the tomato industry.
+
+Symptoms:Infected tomato plants initially show stunted and erect or upright plant growth; plants infected at an early stage of growth will show severe stunting. However, the most diagnostic symptoms are those in leaves.
+Leaves of infected plants are small and curl upward; and show strong crumpling and interveinal and marginal yellowing. The internodes of infected plants become shortened and, together with the stunted growth, plants often take on a bushy appearance, which is sometimes referred to as 'bonsai' or broccoli'-like growth. Flowers formed on infected plants commonly do not develop and fall off (abscise). Fruit production is dramatically reduced, particularly when plants are infected at an early age, and it is not uncommon for losses of 100% to be experienced in fields with heavily infected plants.
+
+Cycle and Lethality:Tomato yellow leaf curl virus is a geminivirus (family Geminiviridae). Although it can infect a relatively wide range of plant species, tomato is the host to which the virus is best adapted and that facilitates the build-up of the virus to high incidences in the field. Other hosts include solanaceous crops, which may develop symptomless infections, and weeds (e.g., nightshade and jimsonweed).
+
+In addition, the virus causes leaf curl in certain varieties of common bean (Phaseolus vulgaris) and the ornamental plant lisianthus (Eustoma grandiflorum). A range of weeds from other families can be infected by this virus, but most of these do not develop obvious disease symptoms. It is not known how well whiteflies acquire the virus from symptomless hosts. However, it has been hypothesized that these hosts serve as a 'bridge' for the virus in the absence of tomato crops, and that perennial weeds help allow the virus to become permanently established.
+
+Organic Solutions: 
+Plant immediately after any tomato-free period or true winter season.
+Avoid planting new fields near older fields (especially those with TYLCV-infected plants).
+Manage WHITEFLIES.
+Cover plants with floating row covers of fine mesh (Agryl or Agribon) to protect from whitefly infestations.
+Rogue diseased plants when incidence of virus infection is low.
+Practice good weed management in and around fields to the extent feasible.
+
+Inorganic Solutions: Use a neonicotinoid insecticide, such as dinotefuran (Venom) imidacloprid (AdmirePro, Alias, Nuprid, Widow, and others) or thiamethoxam (Platinum), as a soil application or through the drip irrigation system at transplanting of tomatoes or peppers. 
+
+Src:https://www2.ipm.ucanr.edu/agriculture/tomato/Tomato-Yellow-Leaf-Curl/
+

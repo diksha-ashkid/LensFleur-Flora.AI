@@ -1,0 +1,22 @@
+Corn Cercospora leaf spot
+
+Basics: Grey leaf spot (GLS) is a foliar fungal disease that affects maize, also known as corn. GLS is considered one of the most significant yield-limiting diseases of corn worldwide. There are two fungal pathogens that cause GLS: Cercospora zeae-maydis and Cercospora zeina. Symptoms seen on corn include leaf lesions, discoloration (chlorosis), and foliar blight. Distinct symptoms of GLS are rectangular, brown to gray necrotic lesions that run parallel to the leaf, spanning the spaces between the secondary leaf veins. The fungus survives in the debris of topsoil and infects healthy crops via asexual spores called conidia. Environmental conditions that best suit infection and growth include moist, humid, and warm climates. Poor airflow, low sunlight, overcrowding, improper soil nutrient and irrigation management, and poor soil drainage can all contribute to the propagation of the disease. Management techniques include crop resistance, crop rotation, residue management, use of fungicides, and weed control. The purpose of disease management is to prevent the amount of secondary disease cycles as well as to protect leaf area from damage prior to grain formation. Corn grey leaf spot is an important disease of corn production in the United States, economically significant throughout the Midwest and Mid-Atlantic regions. However, it is also prevalent in Africa, Central America, China, Europe, India, Mexico, the Philippines, northern South America, and Southeast Asia. The teleomorph (sexual phase) of Cercospora zeae-maydis is assumed to be Mycosphaerella.
+
+Symptoms: Major outbreaks of grey leaf spot occur whenever favorable weather conditions are present. The initial symptoms of grey leaf spot emerge as small, dark, moist spots that are encircled by a thin, yellow radiance (lesions formation). The tissue within the “spot" begins to die as spot size increases into longer, narrower leaf lesions. Although initially brownish and yellow, the characteristic grey color that follows is due to the production of grey fungal spores (conidia) on the lesion surface. These symptoms that are similar in shape, size and discoloration are also prevalent on the corn husks and leaf sheaths. Leaf sheath lesions are not surrounded by a yellow radiance, but rather a brown or dark purple radiance. This dark brown or purple discoloration on leaf sheaths is also characteristic to northern corn leaf blight (Exserohilum turcicum), southern corn leaf blight (Bipolaris maydis), or northern corn leaf spot (Bipolaris zeicola). Corn grey leaf spot mature lesions are easily diagnosed and distinguishable from these other diseases. Mature corn grey leaf spot lesions have a brown, rectangular and vein-limited shape. Secondary and tertiary leaf veins limit the width of the lesion and sometimes individual lesions can combine to blight entire leaves.
+
+Cycle and Lethality: Corn grey leaf spot can be an extremely devastating disease as potential yield losses range from 5 to 40 US bushels per acre (440 to 3,480 L/ha). At higher disease levels, even greater losses can result.
+
+Organic Solutions: In order to best prevent and manage corn grey leaf spot, the overall approach is to reduce the rate of disease growth and expansion. This is done by limiting the amount of secondary disease cycles and protecting leaf area from damage until after corn grain formation. High risks for corn grey leaf spot are divided into eight factors, which require specific management strategies.
+
+High risk factors for grey leaf spot in corn:
+
+Susceptible hybrid
+Continuous corn
+Late planting date
+Minimum tillage systems
+Field history of severe disease
+Early disease activity (before tasseling)
+Irrigation
+Favorable weather forecast for disease
+
+Inorganic Solution: In most cases, fungicides should be applied at or after tasseling. For example, a fungicide has been shown to be most effective for northern corn leaf blight and GLS when applied prior to tasseling to two weeks after tasseling.3 Fungicide products containing a strobilurin and strobilurin/triazole premix are most effective at preventing yield loss when applied in response to GLS disease presence.2 For example, Delaro® 325 SC fungicide is labeled for Grey leaf spot and can be sprayed at the critical time period where necessary.

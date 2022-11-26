@@ -1,0 +1,13 @@
+Tomato Late blight
+
+Basics: Late blight is a plant disease that affects a variety of Solanum spp., including eggplant, pepper, nightshade weeds, and petunia. However, it is most infamously known for its destruction of potato, S. tuberosum, and tomato, S. lycopersicum.
+
+Symptoms:Symptoms of late blight may be found on any above-ground part of the tomato plant. Infected leaves typically have green to brown patches of dead tissue surrounded by a pale green or gray border.When the weather is very humid and wet, late blight infections can appear water-soaked or dark brown in color, and are often described as appearing greasy. White, fuzzy growth may be found on the undersides of leaves or on lower stems. Stem and petiole lesions are brown and are typically not well defined in shape. Discoloration may also occur on the flowers, causing them to drop. Symptomatic tomato fruits appear mottled, often with golden to dark brown, firm, sunken surfaces. White, fuzzy pathogen growth can also be found in association with the fruit lesions. 
+
+Cycle and Lethality:The production of pathogen spores is promoted by moist conditions (90-100% relative humidity) with moderate temperatures (60-80°F). Sporangia may germinate at 64-75°F, and zoospores are released at 46-64°F. Mycelia prefer temperatures around 73°F for optimal growth.In cooler wet weather, however, sporangia produce motile zoospores that can infect host tissues. After just 4-5 days of sufficient moisture and moderate temperatures, a new phase of sporulation can occur at the site of the initial infection. New sporangia are then carried by wind and splashed water to new plant tissue, creating new infections. And the disease spreads. Continued and rapid repetition of this asexual disease cycle causes large-scale and fast-advancing late blight epidemics.
+
+Organic Solutions: You can also try spraying your plant with compost water. What this is is really good compost that is in non-chlorinated water. (Just leave your water out for at least 24 hours to remove the chlorine.) The compost will have good microbes in it to help fight the blight naturally. 
+
+Inorganic Solutions: Spraying fungicides is the most effective way to prevent late blight. For conventional gardeners and commercial producers, protectant fungicides such as chlorothalonil (e.g., Bravo, Echo, Equus, or Daconil) and Mancozeb (Manzate) can be used. Fixed copper products (Kocide) can be used by organic gardeners to prevent late blight infection. 
+
+Src:https://extension.wvu.edu/lawn-gardening-pests/plant-disease/fruit-vegetable-diseases/late-blight-tomatoes#:~:text=Spraying%20fungicides%20is%20the%20most,(Manzate)%20can%20be%20used. 

@@ -1,0 +1,11 @@
+Basics: his disease can be quite destructive and crop losses of up to 100% have been reported in heavily defoliated fields. Septoria leaf spot is primarily a disease of tomato, but it has been reported on other Solanaceous hosts including eggplant, potato, petunia, horsenettle, and black nightshade.
+
+Symptoms:Septoria leaf spot is caused by the fungus Septoria lycopersici. This fungus can attack tomatoes at any stage of development, but symptoms usually first appear on the older, lower leaves and stems when plants are setting fruit. Symptoms usually appear on leaves, but can occur on petioles, stems, and the calyx.
+
+Cycle and Lethality:The first symptoms appear as small, water-soaked, circular spots 1/16 to 1/8" in diameter on the undersides of older leaves. The centers of these spots then turn gray to tan and have a dark-brown margin. The spots are distinctively circular and are often quite numerous. As the spots age, they sometimes enlarge and often coalesce. A diagnostic feature of this disease is the presence of many dark-brown, pimple-like structures called pycnidia (fruiting bodies of the fungus) that are readily visible in the tan centers of the spots. When spots are numerous, affected leaves turn yellow and eventually shrivel up, brown, and drop off. Defoliation usually starts on the oldest leaves and can quickly spread progressively up the plant toward the new growth. Significant losses can result from early leaf-drop and often leads to the subsequent sunscalding of the fruit when plants are prematurely defoliated.
+
+Organic Solutions:  It is very important to eliminate initial sources of inoculum by removing or destroying as much of the tomato debris as possible after harvest in the fall. Alternatively, in large fields where plant removal is not practical, plant debris can be covered and buried by deep plowing.
+
+Inorganic Solutions: The fungicides chlorothalonil and mancozeb are labeled for homeowner use. Since these are protectant materials, they should be applied as soon as symptoms are observed and repeated as necessary when conditions are favorable for disease development and spread.
+
+Src:https://portal.ct.gov/CAES/Fact-Sheets/Plant-Pathology/Septoria-Leaf-Spot-of-Tomato#:~:text=Septoria%20leaf%20spot%20is%20caused,%2C%20stems%2C%20and%20the%20calyx.

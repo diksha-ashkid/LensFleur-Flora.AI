@@ -1,0 +1,15 @@
+Peach Bacterial spot
+
+Basics: Bacterial spot is an important disease of peaches, nectarines, apricots, and plums caused by Xanthomonas arboricola pv. pruni (XAP), formerly Xanthomonas campestris pv. pruni. The disease’s symptoms include fruit spots, leaf spots and twig cankers.
+
+Symptoms:Fruit symptoms include pitting, cracking, gumming and watersoaked tissue. Fruit infected by bacterial spot are more susceptible to other fruit diseases such as brown rot and rhizopus, as well as infestations by insects. Severe leaf spot infections can cause early defoliation. Severe defoliation can result in reduced fruit size, and sunburn and cracking of fruit. Early defoliated trees can be less vigorous and more prone to winter damage.
+
+Cycle and Lethality:
+Bacterial spot multiplication in leaves is favored by wet conditions that cause water congestion in plant tissue (Zehr et al). Rains, dew and high relative humidity assist bacterial entry into plants and multiplication. Spread and entry of the bacterial spot pathogen into plants is favored by abrasions and nicks caused by blowing sand, especially on outside peach rows adjacent to field roads. High wind speeds from sprayers may also help to spread bacterial spot. 
+
+Organic Solutions: Plant susceptible varieties on the inside of orchard blocks with the most resistant varieties on the exposed orchard edge. Protect trees from strong winds by establishing shelter belt trees on the windward side of the orchard. Another strategy is to establish sod strips between trees and to use gravel or other dust-suppressing methods on nearby dirt roads. Removal of gummy-blackened branch tips typical of bacterial spot during spring pruning may help somewhat to reduce inoculum levels.
+
+Inorganic Solutions: Bactericides are available for suppression of bacterial spot. Initial treatments focus on suppression of leaf infection and later on protection of fruit as they emerge from the shuck. Bactericide treatment may not be sufficient to eliminate symptoms under conditions very favorable for disease development. 
+
+
+Src: https://www.canr.msu.edu/ipm/agriculture/fruit/bacterial_spot_of_peach_and_plum#:~:text=Bacterial%20spot%20is%20an%20important,leaf%20spots%20and%20twig%20cankers. 
