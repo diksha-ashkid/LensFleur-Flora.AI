@@ -1,0 +1,194 @@
+<!--{% if prediction %}
+                <p class="two">image is a {{prediction}}</p>
+                {% endif %}-->
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+                    <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet'>
+                <style>
+                .button2 {
+                        background-color: #093e0a; 
+                        border: none;
+                        color: rgb(255, 255, 255);
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                        -webkit-transition-duration: 0.6s; 
+                        transition-duration: 0.6s;
+                        border-radius: 8px;
+                        }
+
+                .button2:hover {
+                        box-shadow: 0 12px 16px 0 rgba(43, 255, 0, 0.686),0 17px 50px 0 rgba(43, 255, 0, 0.686); 
+                        }
+                table {
+                  border-collapse: collapse;
+                  width: 70%;
+                  align-self: center;
+                  margin-left: 110px;
+                 
+                }
+                .b{
+                    font-family: 'Play';
+                    font-size : 17px;
+                    color:  #138404;
+                }
+                .anchor{
+                    font-size: 20px;
+                    font-family: 'Play';
+                }
+                
+                
+                th,td{
+                  padding: 8px;
+                  text-align: center;
+                  border-bottom: 1px solid rgb(255, 255, 255);
+                  font-family: 'Bebas Neue';
+                  font-size: 30px;
+                }
+                
+                
+                
+                
+                tr:hover {background-color: rgb(9, 163, 63);}
+                h2 {
+                  text-align: center;
+                  color: #138404;
+                  font-family: 'Bebas Neue';
+                    font-size: 50px;
+                    font-weight: bold;
+                    margin-bottom: 0px;
+                }
+                h3{
+                    text-align: center;
+                    font-family: 'Play';
+                    font-size: 20px;
+                    color: #138404;
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                }
+                div {
+                  background-color: rgb(255, 255, 255);
+                  width: 300px;
+                  border: 2px solid rgb(7, 142, 7);
+                  padding: 10px;
+                  margin: 20px;
+                  border-radius: 25px;
+                  margin: auto;
+                  text-align: center;
+                }
+                .a{
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+                p{
+                    font-family: 'Play';
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    font-weight: bold;
+                }
+                .wikidiv{
+                    background-color: rgb(255, 255, 255);
+                  width: 400px;
+                  border: 2px solid rgb(7, 142, 7);
+                  padding: 10px;
+                  margin: 20px;
+                  border-radius: 25px;
+                  margin: auto;
+                  text-align: center;
+                }
+                .wiki{
+                    text-align: center;
+                    font-family: 'Play';
+                    font-size: 15px;
+                    color: #138404;
+                    margin-top: 5px;
+                    margin-bottom: 0
+                }
+                
+                </style>
+                </head>
+                <body>
+                
+                <h2>WASTE CATEGORIZATION RESULTS</h2>
+                <br><br><br>
+                <div  class="a"><p>LABEL:</p>
+                {% if prediction %}
+                <h3 class="two">{{prediction.title()}}</h3>
+                {% endif %}
+                </div>
+                <br><br><br><br>
+                <div  class="a.center"><p>GEOLOCATION:</p>
+                    {% if geolocation %}
+                    <h3 class="two">{{geolocation}}</h3>
+                    {% endif %}</div>
+                <br><br><br><br>
+                <div  class="a.center"><p>MORE INFO:</p>
+                    {% if wiki %}
+                    <h3 class="b">{{wiki.title()}}</h3>
+                    {% endif %}</div>
+                <br><br><br><br>
+                
+                <table>
+                
+                  <tr>
+                    <td>Flammability</td>
+                    <td>
+                        {% if flammability %}
+                <h3 class="two">{{flammability.title()}}</h3>
+                {% endif %}
+                    </td>
+                
+                  </tr>
+                  <tr>
+                    <td>Toxicity</td>
+                    
+                    <td>{% if toxicity %}
+                        <h3 class="two">{{toxicity.title()}}</h3>
+                        {% endif %}</td>
+                  
+                  </tr>
+                  <tr>
+                    <td>Reusability</td>
+                    <td>{% if reusability %}
+                        <h3 class="two">{{reusability.title()}}</h3>
+                        {% endif %}</td>
+                
+                  </tr>
+                  <tr>
+                    <td>Recyclibility</td>
+                    <td>{% if recyclability %}
+                        <h3 class="two">{{recyclability.title()}}</h3>
+                        {% endif %}</td>
+                 
+                  </tr>
+                  <tr>
+                    <td>Best Method of Disposal</td>
+                    <td>{% if dispose %}
+                        <h3 class="two">{{dispose.title()}}</h3>
+                        {% endif %}</td>
+                 
+                  </tr>
+                </table>
+            
+                <br><br><br>
+                <div  class="a.center"><p>Organizations To Contact:</p>
+                    {% if contact %}
+                    <h3 class="two">{{contact.title()}}</h3>
+                    {% endif %}</div>
+                <br><br><br>
+                <div  class="wikidiv"><p>For More Information Visit: </p>
+                    {% if visit %}
+                    <a class = "anchor" href = {{visit}}>
+                    <h3 class="wiki">{{visit.title()}}</h3></a>
+                    {% endif %}</div>
+                    <a href = "index.html">
+                    <a href class="button2"  style="margin-left: 46.5%;">Return</a>
+                    </a>
+                </body>
+                </html>
