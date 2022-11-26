@@ -1,8 +1,12 @@
 
 
-Basics: is a disease of citrus caused by a vector-transmitted pathogen. The causative agents are motile bacteria, Liberibacter spp. The disease is vectored and transmitted by the Asian citrus psyllid, Diaphorina citri, and the African citrus psyllid, Trioza erytreae, also known as the two-spotted citrus psyllid. It has also been shown to be graft-transmissible.
+Basics: 
 
-Symptoms:HLB is distinguished by the common symptoms of yellowing of the veins and adjacent tissues; followed by splotchy mottling of the entire leaf, premature defoliation, dieback of twigs, decay of feeder rootlets and lateral roots, and decline in vigor, ultimately followed by the death of the entire plant. Affected trees have stunted growth, bear multiple off-season flowers (most of which fall off), and produce small, irregularly shaped fruit with a thick, pale peel that remains green at the bottom and tastes very bitter.
+is a disease of citrus caused by a vector-transmitted pathogen. The causative agents are motile bacteria, Liberibacter spp. The disease is vectored and transmitted by the Asian citrus psyllid, Diaphorina citri, and the African citrus psyllid, Trioza erytreae, also known as the two-spotted citrus psyllid. It has also been shown to be graft-transmissible.
+
+Symptoms:
+
+HLB is distinguished by the common symptoms of yellowing of the veins and adjacent tissues; followed by splotchy mottling of the entire leaf, premature defoliation, dieback of twigs, decay of feeder rootlets and lateral roots, and decline in vigor, ultimately followed by the death of the entire plant. Affected trees have stunted growth, bear multiple off-season flowers (most of which fall off), and produce small, irregularly shaped fruit with a thick, pale peel that remains green at the bottom and tastes very bitter.
 
 Cycle and Lethality:The causative agents are fastidious phloem-restricted, Gram-negative bacteria in the gracilicutes clade. The Asian form, Ca. L. asiaticus is heat tolerant. This means the greening symptoms can develop at temperatures up to 35 °C. The African form, Ca. L. africanus, and American form, Ca. L. americanus, are heat sensitive, thus symptoms only develop when the temperature is in the range 20–25 °C. Although T. erytreae is the natural vector of African citrus greening and D. citri is the natural vector of American and Asian citrus greening, either psyllid can in fact transmit either of the greening agents under experimental conditions.
 

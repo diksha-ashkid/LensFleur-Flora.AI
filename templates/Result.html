@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Result</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
   <style>
       * {
       padding: 0;
@@ -86,7 +90,7 @@
 
     .heading {
       text-align: center;
-      font-size: 4rem;
+      font-size: 2rem;
       color: rgb(251, 247, 247);
       padding: 1rem;
       margin: 2rem 0;
@@ -264,7 +268,27 @@
       justify-content: center;
       text-align: center;
       color: var(--p);
-
+      font-size: 4rem;
+      font-weight: bolder;
+      color: rgba(204, 230, 203, 0.804);
+    }
+    .box1 {
+      width: 100%;
+      height: 100%;
+      background-color: #16310591;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--p);
       font-weight: bolder;
       color: rgba(204, 230, 203, 0.804);
     }
@@ -291,18 +315,18 @@
   </header>
   <h1 class="heading"></h1>
   <section class="products" id="R">
-    <h1 class="heading">PLANT DISEASE<br /><span style="color:#54b711;">DETECTION RESULTS</span></h1>
+    <h2 class="heading">PLANT DISEASE<br /><span style="color:#54b711;">DETECTION RESULTS</span></h2>
 
     <div class="box">
       {% if prediction %}
-      <h3 class="two">{{prediction.title()}}</h3>
+      <h1 class="two">{{prediction.title()}}</h1>
       {% endif %}
     </div>
-    <div class="box">
+    <div class="box1">
       {% if description %}
-      <h3 class="two">{{description}}</h3>
+      <h2 class="two">{{description}}</h2>
       {% endif %}
-    <div class="box">
+    <div class="box1">
       {% if geolocation %}
       <h3 class="two">{{geolocation}}</h3>
       {% endif %}
