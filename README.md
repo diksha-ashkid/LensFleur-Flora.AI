@@ -55,7 +55,7 @@ Then, install the required packages:
 
 `pip install -r requirements.txt`
 
-## 3. Usage
+## 3. Running the project
 
 To run the project, first navigate to the project directory:
 
@@ -76,5 +76,7 @@ The project will be running on `http://127.0.0.1:3000/`
 
 ## 5. Sponsor Tracks
 GoDaddy URL: lensfleur.co
+
+
 Avanade Sustainability Track
 
