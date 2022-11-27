@@ -1,7 +1,8 @@
 # Centuriton-Hackathon_Flora.AI
 
 # Aim and Target
-### Motive: Horticulture employs approximately 58% of the Indian population. Every year, 15–25% of crops are damaged due to crop diseases. On an annual basis, the whole economic loss is roughly Rs. 50,000 crore. Crop loss is a big blot on the economy, as is the possibility for many farmers whose entire source of income depends on these crops. The crop loss gets even more significant when 200 Indians go to bed hungry every night.
+### Motive:-
+Horticulture employs approximately 58% of the Indian population. Every year, 15–25% of crops are damaged due to crop diseases. On an annual basis, the whole economic loss is roughly Rs. 50,000 crore. Crop loss is a big blot on the economy, as is the possibility for many farmers whose entire source of income depends on these crops. The crop loss gets even more significant when 200 Indians go to bed hungry every night.
 The primary cause of such massive losses is due to the following factors:
 
 1. Diseases that go undetected.
@@ -13,6 +14,8 @@ The current approach to dealing with this scenario is unsustainable, resulting i
 Regardless of the cause of crop loss, farmers bear the brunt of the consequences.
 
 Lensfleur provides a dynamic, user-friendly solution to all of the problems described above under a single roof, including providing farmers with full crop health details, organic and inorganic treatment, a one-on-one chat window with specialists, and product comparison, all available to them through a medium and a language that is most comfortable to them.
+
+### Target Audience
 
 ## 1. Introduction
 
