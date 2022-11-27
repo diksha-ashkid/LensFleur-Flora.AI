@@ -16,6 +16,7 @@ Regardless of the cause of crop loss, farmers bear the brunt of the consequences
 Lensfleur provides a dynamic, user-friendly solution to all of the problems described above under a single roof, including providing farmers with full crop health details, organic and inorganic treatment, a one-on-one chat window with specialists, and product comparison, all available to them through a medium and a language that is most comfortable to them.
 
 ### Target Audience
+The main target audience for this project is farmers and horticulturists,members of public interested in agriculture and planting
 
 ## 1. Introduction
 
