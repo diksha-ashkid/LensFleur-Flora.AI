@@ -20,6 +20,14 @@ This repository contains the code for the Centuriton-Hackathon Flora.AI project.
 
 Wehile the project has many innovative features such as chat-window, which allows users to ask questions and receive answers all of them surround the central featurei, image recognition, which allows users to upload images of the symptoms that their plants are showing and receive the best course of treatment in accordance to their profile. Once the image has been recognized it provides the information along with the geographical location of the plant, which serves as the central data backing store that allows for historical data analysis and processing along with deeper insights and knowledge gathering.
 
+## 1.1 Features
+An all in one application to detect and correct plan disease. which includes the following features:
+1. Disease detection
+2. Disease management guide (with organic and inorganic treatment)
+3. Multilingual chat with subject experts
+4. Comparative product analysis
+5. Multilingual website (compatible with 113 languages)
+6. A simple, user-friendly interface
 
 ## 2. Installation
 
@@ -66,6 +74,3 @@ The project will be running on `http://127.0.0.1:3000/`
   * [Yashas S](https://github.com/Yashas2001)
   * [Nishtha Jain](https://github.com/2002nishthajain)
 
-
-## 5. Video Demonstration
-Youtube video: https://www.youtube.com/watch?v=FJ_GOcIFEyE 
