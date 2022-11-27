@@ -2,9 +2,9 @@
 
 ## 1. Introduction
 
-This repository contains the code for the Centuriton-Hackathon Flora.AI project. The project is a web application that allows users to upload images of plants and receive information about the plant. The user can also upload images of plants that they have grown and receive information about the plant and the best way to grow it. The project is built using the Flask framework and InceptionV3 model.
+This repository contains the code for the Centuriton-Hackathon Flora.AI project. The project is a web application that allows users to upload images of their symptomatic corp and receive information about the plant including the diagnosts for the current display of symptom. Along with this the application is integrated with a chat service that allows the user to connect to experts post diagnosis or just to seek advice. The webapp is integrated with the Google Translate API that allows translation of all aspects of the window into any one of 122 languages that are supported. The project is built using the Flask framework which is used to integrate all the different features of the aplication and present it in a easy to read and use format, as accessibility and sustainability were the key principles in developing this project.
 
-The project has many innovative features such as chat-window, which allows users to ask questions and receive answers, The main part is the image recognition, which allows users to upload images of plants and receive information about the plant. Once the image has been recognized it provides the information along with the geographical location of the plant. Hence if there is a large scale outbreak of a disease, the location can be marked and further actions can be taken.
+Wehile the project has many innovative features such as chat-window, which allows users to ask questions and receive answers all of them surround the central featurei, image recognition, which allows users to upload images of the symptoms that their plants are showing and receive the best course of treatment in accordance to their profile. Once the image has been recognized it provides the information along with the geographical location of the plant, which serves as the central data backing store that allows for historical data analysis and processing along with deeper insights and knowledge gathering.
 
 ## 2. Installation
 
