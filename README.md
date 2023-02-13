@@ -1,4 +1,4 @@
-# Centuriton-Hackathon_Flora.AI
+# LensFleur_Flora.AI
 
 # Aim and Target
 ### Motive:-
@@ -20,7 +20,7 @@ The main target audience for this project is farmers and horticulturists,members
 
 ## 1. Introduction
 
-This repository contains the code for the Centuriton-Hackathon Flora.AI project. The project is a web application that allows users to upload images of their symptomatic corp and receive information about the plant including the diagnosts for the current display of symptom. Along with this the application is integrated with a chat service that allows the user to connect to experts post diagnosis or just to seek advice. The webapp is integrated with the Google Translate API that allows translation of all aspects of the window into any one of 113 languages that are supported. The project is built using the Flask framework which is used to integrate all the different features of the aplication and present it in a easy to read and use format, as accessibility and sustainability were the key principles in developing this project.
+This repository contains the code for the Flora.AI project. The project is a web application that allows users to upload images of their symptomatic corp and receive information about the plant including the diagnosts for the current display of symptom. Along with this the application is integrated with a chat service that allows the user to connect to experts post diagnosis or just to seek advice. The webapp is integrated with the Google Translate API that allows translation of all aspects of the window into any one of 113 languages that are supported. The project is built using the Flask framework which is used to integrate all the different features of the aplication and present it in a easy to read and use format, as accessibility and sustainability were the key principles in developing this project.
 
 Wehile the project has many innovative features such as chat-window, which allows users to ask questions and receive answers all of them surround the central featurei, image recognition, which allows users to upload images of the symptoms that their plants are showing and receive the best course of treatment in accordance to their profile. Once the image has been recognized it provides the information along with the geographical location of the plant, which serves as the central data backing store that allows for historical data analysis and processing along with deeper insights and knowledge gathering.
 
@@ -53,7 +53,7 @@ The project requires Python 3.6 or higher. The project also requires the followi
 
 To install the project, first clone the repository:
 
-`git clone 'https://github.com/diksha-ashkid/Centuriton-Hackathon_Flora.AI.git'`
+`git clone 'https://github.com/diksha-ashkid/LensFleur_Flora.AI.git'`
 
 Then, install the required packages:
 
