@@ -63,7 +63,7 @@ Then, install the required packages:
 
 To run the project, first navigate to the project directory:
 
-`cd Centuriton-Hackathon_Flora.AI`
+`cd LensFleur_Flora.AI`
 
 Then, run the following command:
 
@@ -78,12 +78,6 @@ The project will be running on `http://127.0.0.1:3000/`
   * [Yashas S](https://github.com/Yashas2001)
   * [Nishtha Jain](https://github.com/2002nishthajain)
 
-## 5. Sponsor Tracks
-GoDaddy URL: lensfleur.co
-
-
-Avanade Sustainability Track
-
-## 6. Video Demonstration of Project:
-https://www.youtube.com/watch?v=FJ_GOcIFEyE
+## 5. Video Demonstration of Project:
+https://www.youtube.com/watch?v=zvtQktcUfAU
 
