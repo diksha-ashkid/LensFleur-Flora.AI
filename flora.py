@@ -1,21 +1,34 @@
 from flask import Flask, render_template, request
-#from keras.applications import VGG16
-#from keras.applications.vgg16 import preprocess_input
-#from keras.applications.vgg16 import decode_predictions
-#from keras.utils import load_img
-#from keras.utils import img_to_array
+from keras.applications import VGG16
+from keras.applications.vgg16 import preprocess_input
+from keras.applications.vgg16 import decode_predictions
+from keras.utils import load_img
+from keras.utils import img_to_array
 from keras.models import load_model
 #from keras.layers import Lambda
 #import keras.applications.mobilenet_v2 as mobilenetv2
 import numpy as np
-#import pandas as pd
-#import exif #API to extract metadata
+import pandas as pd
+import exif #API to extract metadata
 from exif import Image as im
 from geopy.geocoders import Nominatim #geolocation services
 #import wikipedia #use wikipedia api
 import cv2
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
+import re
+
+
 
 app = Flask(__name__)
+mysql = MySQL(app)
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'Aakash5122!'
+app.config['MYSQL_DB'] = 'login'
+app.config['SECRET_KEY'] = 'lensfleur'
+
 classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust', 
          'Apple healthy', 'Blueberry healthy', 
          'Cherry Powdery mildew', 'Cherry healthy', 
@@ -32,13 +45,63 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato Septoria leaf spot', 'Tomato Spider mites', 
          'Tomato Target Spot', 'Tomato Yellow Leaf Curl Virus', 
          'Tomato mosaic virus', 'Tomato healthy']
-model = load_model("model_finetuned.h5")
+
+
+model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
+#LensFleur-Flora.AI\model_finetuned.h5
 
 
 
 @app.route('/', methods = ['GET'])
-def hello_world():
-    return render_template('index1.html')
+@app.route('/login', methods = ['GET', 'POST'])
+def login():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE username = % s AND password = % s', (username, password, ))
+        account = cursor.fetchone()
+        if account:
+            session['loggedin'] = True
+            session['username'] = account['username']
+            msg = 'Logged in successfully !'
+            return render_template('index1.html', msg = msg)
+        else:
+            msg = 'Incorrect username / password !'
+    return render_template('login.html', msg = msg)
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('username', None)
+    return redirect(url_for('login'))
+@app.route('/register', methods =['GET', 'POST'])
+def register():
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form :
+        username = request.form['username']
+        password = request.form['password']
+        name = request.form['name']
+        aadhaar = request.form['aadhaar']
+        email = request.form['email']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, ))
+        account = cursor.fetchone()
+        if account:
+            msg = 'Account already exists !'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            msg = 'Invalid email address !'
+        elif not re.match(r'[A-Za-z0-9]+', username):
+            msg = 'Username must contain only characters and numbers !'
+        elif not username or not password or not email:
+            msg = 'Please fill out the form !'
+        else:
+            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s)', (username, password, email, name, aadhaar, ))
+            mysql.connection.commit()
+            msg = 'You have successfully registered !'
+    elif request.method == 'POST':
+        msg = 'Please fill out the form !'
+    return render_template('register.html', msg = msg)
 
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
@@ -83,9 +146,10 @@ def predict():
         TheLongitudeValue=TheDegreeValue+(TheMinuteValue/60)+(TheSecondValue/3600)
         coord = (TheLatitudeValue, TheLongitudeValue)
         geolocation= geocoder.reverse(coord)
+        
     else:
         geolocation = "No GPS Data"
-    file = open("static\\" + prediction + ".txt", "r") 
+    file = open("LensFleur-Flora.AI\static\\" + prediction.title() + ".txt", "r") 
     description = file.read()
     return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description)
 if __name__ == '__main__':
