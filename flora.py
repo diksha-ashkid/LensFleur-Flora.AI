@@ -1,18 +1,18 @@
 from flask import Flask, render_template, request
-from keras.applications import VGG16
-from keras.applications.vgg16 import preprocess_input
-from keras.applications.vgg16 import decode_predictions
-from keras.utils import load_img
-from keras.utils import img_to_array
+#from keras.applications import VGG16
+#from keras.applications.vgg16 import preprocess_input
+#from keras.applications.vgg16 import decode_predictions
+#from keras.utils import load_img
+#from keras.utils import img_to_array
 from keras.models import load_model
-from keras.layers import Lambda
-import keras.applications.mobilenet_v2 as mobilenetv2
+#from keras.layers import Lambda
+#import keras.applications.mobilenet_v2 as mobilenetv2
 import numpy as np
-import pandas as pd
-import exif #API to extract metadata
+#import pandas as pd
+#import exif #API to extract metadata
 from exif import Image as im
 from geopy.geocoders import Nominatim #geolocation services
-import wikipedia #use wikipedia api
+#import wikipedia #use wikipedia api
 import cv2
 
 app = Flask(__name__)
