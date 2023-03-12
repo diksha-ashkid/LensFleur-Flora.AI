@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
-from keras.applications import VGG16
+#from keras.applications import VGG16
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
-from keras.utils import load_img
-from keras.utils import img_to_array
+#from keras.utils import load_img
+#from keras.utils import img_to_array
 from keras.models import load_model
 #from keras.layers import Lambda
 #import keras.applications.mobilenet_v2 as mobilenetv2
@@ -47,12 +47,15 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato mosaic virus', 'Tomato healthy']
 
 
-model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
+model = load_model("model_finetuned.h5")
 #LensFleur-Flora.AI\model_finetuned.h5
 
 
 
 @app.route('/', methods = ['GET'])
+def index():
+    return render_template('index1.html')
+"""""
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     msg = ''
@@ -66,7 +69,7 @@ def login():
             session['loggedin'] = True
             session['username'] = account['username']
             msg = 'Logged in successfully !'
-            return render_template('index1.html', msg = msg)
+            return render_template('index.html', msg = msg)
         else:
             msg = 'Incorrect username / password !'
     return render_template('login.html', msg = msg)
@@ -102,7 +105,7 @@ def register():
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     return render_template('register.html', msg = msg)
-
+"""
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     return render_template('index1.html')
