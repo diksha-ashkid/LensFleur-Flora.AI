@@ -1,31 +1,27 @@
- 
 <html>
   <head>
       <meta charset="UTF-8">
       <title> Register </title>
-      <link rel="stylesheet" href="{{ url_for('static', filename='loginstyles.css') }}">             
+      <link rel="stylesheet" href="{{ url_for('static', filename='registerstyles.css') }}">             
   </head>
   <body></br></br></br></br></br>
-      <div align="center">
-        <div align="center" class="border">
-           <div class="header">
-              <h1 class="word">Register</h1>
-           </div></br></br></br>
-          <h2 class="word">
-              <form action="{{ url_for('register') }}" method="post">
-                <div class="msg">{{ msg }}</div>
-                  <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
-                  <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
-                  <input id="name" name="name" type="text" placeholder="Enter Your Name" class="textbox"/></br></br>
-                  <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br>
-                  <input id="aadhaar" name="aadhaar" type="password" placeholder="Enter Your Aadhaar ID" class="textbox"/></br></br>
-                  <input type="submit" class="btn" value="Sign Up"></br>
-              </form>
-          </h2>
-          <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
-          <br>
-          <br>
-        </div>
-      </div>
+    <div class = "title">
+      <h1 class="word">REGISTER</h1>
+    </div>
+    <div class="form">
+      
+        <form action="{{ url_for('register') }}" method="post">
+          <p class = "message1">{{msg}}</p>
+            <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+            <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
+            <input id="name" name="name" type="text" placeholder="Enter Your Name" class="textbox"/></br></br>
+            <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br>
+            <input id="aadhaar" name="aadhaar" type="password" placeholder="Enter Your Aadhaar ID" class="textbox"/></br></br>
+            <input type="submit" class="btn" value="Sign Up"></br>
+            <p class="message">Have an account already? <a href="{{url_for('login')}}">Sign in</a></p>
+        </form>
+  
+    </div>
+    </div>
   </body>
 </html>
