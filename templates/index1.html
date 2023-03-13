@@ -663,13 +663,13 @@ header .arrow-down {
     border-color: #032406;
     border: dashed 5px;
     border-radius: 30px;
-    padding: 30px;
-    margin: 20px;
+    padding: 2%;
+    margin: 2%;
 
 }
 .about-us .text, .reservation .text {
     flex: 50%;
-    padding: 40px 52px 0 0;
+    padding: 4% 5.2% 0 0;
 }
 .about-us .text h3, .reservation .text h3 {
     color: #000;
@@ -681,7 +681,7 @@ header .arrow-down {
     flex: 50%;
 }
 .about-us .image, .reservation .image {
-    margin-left: 20px;
+    margin-left: 2%;
 }
 /*End About-Us*/
 
@@ -953,16 +953,16 @@ input[type="file"]::file-selector-button:hover {
 
 @media (max-width: 1200px) {
     .menu, .about-us, .reservation {
-        padding: 60px 40px;
+        padding: 6% 4%;
     }
     .about-us .text, .reservation .text {
-        padding: 0 32px 0 0;
+        padding: 0 3.2% 0 0;
     }
     .about-us .image-container, .reservation .image-container {
         align-items: center;
     }
     .menu .text {
-        padding: 0 0 0 32px;
+        padding: 0 0 0 3.2%;
     }
 }
 
@@ -977,29 +977,29 @@ input[type="file"]::file-selector-button:hover {
         padding-top: 50px;
     }
     .about-us .text , .reservation .text {
-        padding: 0 0 40px;
+        padding: 0 0 4%;
     }
     .about-us .image-container .image1, .reservation .image-container .image1 {
-        margin-left: 50px;
+        margin-left: 5%;
     }
     .menu {
         display: block;
-        padding: 60px 20px 60px 40px;
+        padding: 6% 20% 60% 4%;
     }
     .menu .text {
-        padding: 20px 20px 0 0;
+        padding: 2% 2% 0 0;
     }
     .reservation {
         display: block;
-        padding: 30px 20px 60px;
+        padding: 3% 2% 6%;
     }
     .contact {
         display: block;
-        padding: 78px 20px;
+        padding: 7.8% 2%;
     }
     .contact .form {
         margin-left: 0;
-        margin-top: 40px;
+        margin-top: 4%;
     }
 }
 
@@ -1039,10 +1039,10 @@ input[type="file"]::file-selector-button:hover {
    
    
     .about-us, .reservation {
-        padding: 60px 20px;
+        padding: 6% 2%;
     }
     .menu {
-        padding: 60px 0 60px 20px;
+        padding: 6% 0 6% 2%;
     }
 }
 /*End Home Page Responsive*/
@@ -1237,15 +1237,13 @@ body
         <div class="image image1">
             <img src="{{url_for('static',filename='/l1.jpg')}}" alt="Food Photo">
         </div>
-        
     </div>
 
-    <div class="text" style = "padding-left: 200px;">
-        <h2 style = "color:#54b711; font-size: 110px;">Diagnose Now</h2></br>
+    <div class="text" style = "padding-left: 7%; padding-top: 5% ;">
+        <h2 style = "color:#54b711; font-size: 100px;">Diagnose Now</h2></br>
         <br>
         <br>
-        <br>
-        <p style="font-family: Staatliches; font-size: 25px;">Upload an image, or take one through your webcam. Then, right click, save, and upload the image.</p></br>
+        <p style="font-family: Staatliches; font-size: 22px;">Upload an image, or take one through your webcam. Then, right click, save, and upload the image.</p></br>
         <form class="one" action="/" method="post" enctype="multipart/form-data" style="margin-bottom: 30px;">
             <input type="file" name="image" style="font-family: Play; padding-right: 60px;" />
             <button type="submit" class="button2" style="margin-left: 0px;">Upload</button>
