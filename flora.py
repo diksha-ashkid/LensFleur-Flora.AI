@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,redirect, url_for, session
 #from keras.applications import VGG16
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
@@ -55,7 +55,7 @@ model = load_model("model_finetuned.h5")
 @app.route('/', methods = ['GET'])
 def index():
     return render_template('index1.html')
-"""""
+
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     msg = ''
@@ -105,7 +105,7 @@ def register():
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     return render_template('register.html', msg = msg)
-"""
+
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     return render_template('index1.html')
