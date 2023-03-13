@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+.form {
+  position: relative;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Oswald";
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form .btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #43A047;
+  }
+.message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+    font-family: "Oswald";
+  }
+  .message1 {
+    margin: 15px 0 0;
+    color: rgb(31, 85, 0);
+    font-size: 20px;
+    font-family: "Oswald";
+  }
+  .form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+body { 
+  animation: background 7s infinite;   
+}
+@keyframes background {
+    0% {
+        background:rgb(31, 85, 0);
+    }
+    
+    50% {
+        background:rgb(141,194,111);
+    }
+    
+    100% {
+        background:rgb(31, 85, 0);
+    }
+}
+.title{
+    font-family: "Oswald";
+    font-size: 35px;
+    color: #c3ddc3;
+    text-align: center;
+    padding-top: 0%;
+}
