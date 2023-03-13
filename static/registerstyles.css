@@ -1,6 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
+.select{
+ 
+  color: rgb(31, 85, 0);
+  font-size: 14px;
+  font-family: "Oswald";
+  text-align: left;
+  margin-left: 8%;
+}
 
 .form {
   position: relative;

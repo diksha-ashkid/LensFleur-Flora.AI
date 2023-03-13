@@ -1,18 +1,18 @@
-from flask import Flask, render_template, request,redirect, url_for, session
-#from keras.applications import VGG16
+from flask import Flask, render_template, request, redirect, url_for, session
+from flask_mysqldb import MySQL
+from keras.applications import VGG16
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
-#from keras.utils import load_img
-#from keras.utils import img_to_array
+from keras.utils import load_img
+from keras.utils import img_to_array
 from keras.models import load_model
-#from keras.layers import Lambda
-#import keras.applications.mobilenet_v2 as mobilenetv2
+from keras.layers import Lambda
+import keras.applications.mobilenet_v2 as mobilenetv2
 import numpy as np
 import pandas as pd
-import exif #API to extract metadata
 from exif import Image as im
 from geopy.geocoders import Nominatim #geolocation services
-#import wikipedia #use wikipedia api
+import wikipedia #use wikipedia api
 import cv2
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -47,18 +47,12 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato mosaic virus', 'Tomato healthy']
 
 
-model = load_model("model_finetuned.h5")
-#LensFleur-Flora.AI\model_finetuned.h5
-
-
+model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
-def index():
-    return render_template('index1.html')
-
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
-    msg = ''
+    msg = 'Log In To Continue'
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
@@ -69,7 +63,7 @@ def login():
             session['loggedin'] = True
             session['username'] = account['username']
             msg = 'Logged in successfully !'
-            return render_template('index.html', msg = msg)
+            return render_template('index1.html', msg = msg)
         else:
             msg = 'Incorrect username / password !'
     return render_template('login.html', msg = msg)
@@ -87,6 +81,7 @@ def register():
         name = request.form['name']
         aadhaar = request.form['aadhaar']
         email = request.form['email']
+        city = request.form['city_state']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, ))
         account = cursor.fetchone()
@@ -99,7 +94,7 @@ def register():
         elif not username or not password or not email:
             msg = 'Please fill out the form !'
         else:
-            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s)', (username, password, email, name, aadhaar, ))
+            cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s, %s)', (username, password, email, name, aadhaar,city, ))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
