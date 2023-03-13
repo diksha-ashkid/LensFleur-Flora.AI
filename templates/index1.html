@@ -80,6 +80,9 @@ p, .a-CTA, input, .copyright li, .contact .form form label, .contact .form form 
 header .text, .about-us .text, .reservation .text, .menu .box-model, .menu .text, .fixed-image .text, footer, .copyright, .contact .text i {
     text-align: center;
 }
+.about-us .text{
+    margin-top: 0.001%;
+}
 .about-us, .reservation, .about-us .image-container, .reservation .image-container, .menu, .menu .menu-image-container, footer .contact-container, .copyright ul, .contact {
     display: flex;
 }
@@ -645,8 +648,8 @@ header .arrow-down {
     margin-right: 0px;
 }
 .dos{
-    width: 500px;
-    height: 300px;
+    width: 8005%;
+    height: 100%;
     margin-right: 0px;
 }
 
@@ -655,7 +658,9 @@ header .arrow-down {
 
 /*Start About-Us*/
 .about-us{
-    padding: 60px;
+    padding: 3%;
+    padding-left: 4%;
+    margin : 0.1%;
 
 }
 .reservation {
@@ -669,7 +674,7 @@ header .arrow-down {
 }
 .about-us .text, .reservation .text {
     flex: 50%;
-    padding: 4% 5.2% 0 0;
+    padding: 3% 3% 0 0;
 }
 .about-us .text h3, .reservation .text h3 {
     color: #000;
@@ -688,9 +693,9 @@ header .arrow-down {
 /*Start Recipes*/
 .recipes .image {
     height: 350px;
-    background: url("{{url_for('static',filename='s1.jpg')}}") fixed center;
-    
+    background: url("{{url_for('static',filename='ab.jpg')}}") fixed center;
     background-size: cover;
+    opacity :0.7;
 }
 /*End Recipes*/
 
@@ -979,7 +984,13 @@ input[type="file"]::file-selector-button:hover {
     .about-us .text , .reservation .text {
         padding: 0 0 4%;
     }
-    .about-us .image-container .image1, .reservation .image-container .image1 {
+
+    .about-us .image-container .image1{
+        width: 250%;
+        height: 200%;
+    }
+    
+    .reservation .image-container .image1 {
         margin-left: 5%;
     }
     .menu {
@@ -1247,29 +1258,29 @@ body
   <div class="recipes">
     <div class="image"></div>
     <div class="text">
-        <h2 style = "font-size: 80px;color:#54b711">Power Of Knowledge</h2>
+        <h2 style = "font-size: 80px;color:#ffffff;text-align: left;">Power Of Knowledge</h2>
         <br>
         <br>
         <br>
-        <h3>At Your Fingertips</h3>
+        <h3 style="color:#000000">At Your Fingertips</h3>
     </div>
 </div>
 <!--power of knowledge -->
   <!--start About Us-->
   <div class="about-us">
       <div class="text">
-          <h2 style = "color: #54b711; font-size: 110px;">OUR MOTIVATION</h2></br>
+          <h2 style = "color: #54b711; font-size: 100px;">OUR MOTIVATION</h2></br><br/>
           <br>
           <!--<h3 style = "color: #003a0c">OUR STORY</h3>-->
-          <p> LensFleur is a solution for farmers and horticulturists to ensure agricultural sustainability. The platform provides health diagnosis services
-             to detect diseases and pests affecting plants, along with pricing options for fertilizers, both organic and chemical. The service also includes
-              chat support with agricultural experts. The platform can be accessed in various languages for increased accessibility. The aim is to support
-               farming communities and ensure stable agricultural production in the face of challenges such as climate change and socio-economic factors.
-          </p>
+          <p>LensFleur is a solution for farmers and horticulturists to ensure agricultural sustainability. 
+            This service provides health diagnosis services to detect diseases and pests affecting plants, along with pricing options for fertilizers,
+             both organic and inorganic.<br/> LensFleur also includes chat support with agricultural experts. This platform can be accessed in multiple
+             languages for increased accessibility. The aim is to support farming communities and ensure stable agricultural production in the face 
+             of challenges such as pests and diseases.</p>
       </div>
       <div class="image-container">
           <div class="image image1">
-              <img src="{{url_for('static',filename='plight.jpeg')}}"alt="Food Photo" class = "dos">
+              <img src="{{url_for('static',filename='motivation.png')}}"alt="Food Photo" class = "dos">
           </div>
           <!--<div class="image image2" class = "dos">
               <img src="{{url_for('static',filename='/v2.jpg')}}" >
@@ -1280,56 +1291,13 @@ body
 
 
 
-  <!--start Menu-->
-  <div class="menu">
-      <div class="box-model">
-          <i class="fas fa-times fa-2x close"></i>
-          <div class="arrow">
-              <div class="arrow arrow-right"></div>
-              <div class="arrow arrow-left"></div>
-          </div>
-          <div class="box-image-container">
-              <div class="box-image">
-                  <img src=""  alt="Food Photo">
-              </div>
-          </div>
-      </div>
-      
-      <div class="menu-image-container">
-          <div class="image active">
-              <img src="{{url_for('static',filename='/x1.jpg')}}" alt="Food Photo" class="uno">
-          </div>
-          <div class="image">
-              <img src="{{url_for('static',filename='/x2.jpg')}}" alt="Food Photo" class="uno">
-          </div>
-          <div class="image">
-              <img src="{{url_for('static',filename='/x3.jpg')}}" alt="Food Photo" class="uno">
-          </div>
-          <div class="image">
-              <img src= "{{url_for('static', filename='x4.jpg')}}" alt="Food Photo" class="uno">
-          </div>
-      </div>
-
-      <div class="text">
-          <h2 style = "color:#54b711">Grow</h2>
-          <br>
-          <h3>Confidently</h3>
-       
-          <p>With our expert-backed insight and rigourous testing, our model is trained to detect what's ailing your plants, and get you the right course of
-            action as soon as possible.
-          </p>
-          
-      </div>
-  </div>
-</div>
-  <!--End Menu-->
 
   <!--Start fixed-image-->
   <div class="fixed-image">
       <div class="text">
           <h2 style = "color:#54b711; font-size: 120px;">Detect. Connect. Engage.</h2>
           <br>
-          <h3>Grow. Like Never Before.</h3>
+          <h3>Grow Like Never Before.</h3>
       </div>
   </div>
   <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
