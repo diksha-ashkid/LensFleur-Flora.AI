@@ -1,18 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
-#from keras.applications import VGG16
-# from keras.applications.vgg16 import preprocess_input
-# from keras.applications.vgg16 import decode_predictions
-# from keras.utils import load_img
-# from keras.utils import img_to_array
+from keras.applications import VGG16
+from keras.applications.vgg16 import preprocess_input
+from keras.applications.vgg16 import decode_predictions
+from keras.utils import load_img
+from keras.utils import img_to_array
 from keras.models import load_model
-#from keras.layers import Lambda
-#import keras.applications.mobilenet_v2 as mobilenetv2
+from keras.layers import Lambda
+import keras.applications.mobilenet_v2 as mobilenetv2
 import numpy as np
-#import pandas as pd
+import pandas as pd
 from exif import Image as im
 from geopy.geocoders import Nominatim #geolocation services
-#import wikipedia #use wikipedia api
+import wikipedia #use wikipedia api
 import cv2
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -47,7 +47,8 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato mosaic virus', 'Tomato healthy']
 
 
-model = load_model("model_finetuned.h5")
+
+model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
 def index():
@@ -89,12 +90,14 @@ def register():
         account = cursor.fetchone()
         if account:
             msg = 'Account already exists !'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+        elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email):
             msg = 'Invalid email address !'
-        elif not re.match(r'[A-Za-z0-9]+', username):
+        elif not re.match(r'^[a-zA-Z0-9]+$', username):
             msg = 'Username must contain only characters and numbers !'
-        elif not username or not password or not email:
-            msg = 'Please fill out the form !'
+        elif not re.match(r'^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', password):#for length of password
+            msg = 'Password must contain atleast 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character!'
+        elif not username or not password or not email or not name or not aadhaar or not city:
+            msg = 'Please fill out the form fully!'
         else:
             cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s, %s)', (username, password, email, name, aadhaar,city, ))
             mysql.connection.commit()
@@ -102,7 +105,6 @@ def register():
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     return render_template('register.html', msg = msg)
-
 
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
@@ -150,9 +152,21 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("./static//" + prediction.title() + ".txt", "r") 
+    file = open("LensFleur-Flora.AI\static\\" + prediction.title() + ".txt", "r") 
     description = file.read()
-    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description)
+    basics = description.split("Symptoms:")
+    basic = basics[0]
+    symp = basics[1].split("Cycle and Lethality:")
+    symptoms = "Symptoms: "+symp[0]
+    cyc = symp[1].split("Organic Solutions:")
+    cycle = "Cycle and Lethality: "+cyc[0]
+    organic = cyc[1].split("Inorganic Solutions:")
+    organics = "Organic Solutions: "+ organic[0]
+    inorganic = organic[1].split("Src:")
+    inorganics = "Inorganic Solutions: "+inorganic[0]
+    src = "Find out more at: "+inorganic[1]
+    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
+                           symptoms = symptoms, cycle = cycle, organics = organics, inorganics = inorganics, src = src)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
     
