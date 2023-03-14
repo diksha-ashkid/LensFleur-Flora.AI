@@ -1,10 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
-from keras.applications import VGG16
-from keras.applications.vgg16 import preprocess_input
-from keras.applications.vgg16 import decode_predictions
-from keras.utils import load_img
-from keras.utils import img_to_array
 from keras.models import load_model
 from keras.layers import Lambda
 import keras.applications.mobilenet_v2 as mobilenetv2
@@ -26,7 +21,7 @@ mysql = MySQL(app)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Aakash5122!'
-app.config['MYSQL_DB'] = 'login'
+app.config['MYSQL_DB'] = 'lensfleur'
 app.config['SECRET_KEY'] = 'lensfleur'
 
 classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust', 
@@ -48,11 +43,11 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
 
 
 
-model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
+model = load_model(".static/model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index1.html')
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     msg = 'Log In To Continue'
@@ -152,20 +147,33 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("LensFleur-Flora.AI\static\\" + prediction.title() + ".txt", "r") 
-    description = file.read()
-    basics = description.split("Symptoms:")
-    basic = basics[0]
-    symp = basics[1].split("Cycle and Lethality:")
-    symptoms = "Symptoms: "+symp[0]
-    cyc = symp[1].split("Organic Solutions:")
-    cycle = "Cycle and Lethality: "+cyc[0]
-    organic = cyc[1].split("Inorganic Solutions:")
-    organics = "Organic Solutions: "+ organic[0]
-    inorganic = organic[1].split("Src:")
-    inorganics = "Inorganic Solutions: "+inorganic[0]
-    src = "Find out more at: "+inorganic[1]
-    return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
+    file = open("LensFleur-Flora.AI/static/" + prediction.title() + ".txt", "r") 
+    if "Healthy" in prediction or "healthy" in prediction:
+        basic = file.read()
+        return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic)
+    else:
+        description = file.read()
+        basics = description.split("Symptoms:")
+        basic = basics[0]
+        symp = basics[1].split("Cycle and Lethality:")
+        symptoms = "Symptoms: "+symp[0]
+        cyc = symp[1].split("Organic Solutions:")
+        cycle = "Cycle and Lethality: "+cyc[0]
+        organic = cyc[1].split("Inorganic Solutions:")
+        organics = "Organic Solutions: "+ organic[0]
+        inorganic = organic[1].split("Src:")
+        inorganics = "Inorganic Solutions: "+inorganic[0]
+        src = "Find out more at: "+inorganic[1]
+
+
+        cur = mysql.connection.cursor()
+        check = "select num_detection from detection_data where geo_location = %s and plant_disease = %s"
+        num_detect = cur.execute(check, (geolocation, prediction))+1
+        cur.execute("INSERT INTO detection_data (username, plant_disease, geo_location, num_detection) VALUES (%s, %s, %s, %s)", (session['username'], prediction, geolocation, num_detect))
+        mysql.connection.commit()
+        cur.close()
+
+        return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
                            symptoms = symptoms, cycle = cycle, organics = organics, inorganics = inorganics, src = src)
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
