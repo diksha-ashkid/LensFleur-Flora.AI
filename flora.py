@@ -150,7 +150,7 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("LensFleur-Flora.AI\static\\" + prediction.title() + ".txt", "r") 
+    file = open("./static/"+ prediction.title() + ".txt", "r") 
     description = file.read()
     return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description)
 if __name__ == '__main__':
