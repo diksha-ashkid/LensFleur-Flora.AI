@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
   <style>
@@ -30,9 +33,9 @@
     }
 
     body {
-      background-image: url({{url_for('static',filename='2.jpg')}});
+      background-image: url("static/header.jpg");
       background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: infinite;
     }
 
     body {
@@ -130,7 +133,9 @@
       align-items: center;
       justify-content: space-between;
       z-index: 1000;
+      
     }
+    
 
     header .logo {
       font-size: 2rem;
@@ -147,6 +152,7 @@
       font-size: 2.5 rem;
       padding: 0 0.5rem;
       color: black;
+      font-family: "Lato";
     }
 
     header .navbar a:hover {
@@ -309,23 +315,42 @@
     <nav class="navbar">
       <a href="{{url_for('home')}}">HOME</a>
       <a href="{{url_for('product')}}">PRODUCTS</a>
-      <a href="{{url_for('chat')}}">EXPERT CHATS</a>
+      <a href="{{url_for('chat')}}">EXPERT CHAT</a>
       <a href="#">LOGIN/REGISTRATION</a>
     </nav>
   </header>
-  <h1 class="heading"></h1>
   <section class="products" id="R">
-    <h2 class="heading">PLANT DISEASE<br /><span style="color:#54b711;">DETECTION RESULTS</span></h2>
+    <h2 class="heading" style = "margin-top: 8%;"><span style="color:#54b711;  font-family: Lato;">DETECTION RESULTS</span></h2>
 
     <div class="box">
       {% if prediction %}
-      <h1 class="two">{{prediction.title()}}</h1>
+      <h1 class="two" style = "font-size: 70px; font-family: Bebas Neue; font-weight: None;">{{prediction.title()}}</h1>
       {% endif %}
     </div>
     <div class="box1">
-      {% if description %}
-      <h2 class="two">{{description}}</h2>
-      {% endif %}
+      {% if basic %}
+      <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{basic}}</h2>
+      {% endif %}</div>
+      <div class="box1">
+        {% if symptoms %}
+        <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{symptoms}}</h2>
+        {% endif %}</div>
+        <div class="box1">
+          {% if cycle %}
+          <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{cycle}}</h2>
+          {% endif %}</div>
+          <div class="box1">
+            {% if organics %}
+            <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{organics}}</h2>
+            {% endif %}</div>
+            <div class="box1">
+              {% if inorganics %}
+              <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{inorganics}}</h2>
+              {% endif %}</div>
+              <div class="box1">
+              {% if src %}
+              <h2 class="two"style = " font-family: Lato; font-weight: None;" >{{src}}</h2>
+              {% endif %}</div>
     <div class="box1">
       {% if geolocation %}
       <h3 class="two">{{geolocation}}</h3>

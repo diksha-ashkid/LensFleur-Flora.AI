@@ -1323,7 +1323,7 @@ body
   <div class="fixed-image">
       <div class="text">
           <h2 style = "color:#54b711; font-size: 120px;">Detect. Connect. Engage.</h2>
-          <br>
+          <br/>
           <h3>Grow Like Never Before.</h3>
       </div>
   </div>
@@ -1334,39 +1334,7 @@ body
             new google.translate.TranslateElement("google_element");
         }
     </script>
-    <script>
-    let msg = new SpeechSynthesisUtterance();
-    let voices = speechSynthesis.getVoices();
-    msg.voice = voices[0];
-    let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
-    const myButton = document.getElementById("myButton");
 
-    myButton.addEventListener("click", () => {
-        
-
-        
-        tags.forEach((tag) => {
-            tag.addEventListener('click', (e) => {
-                
-                msg.text = e.target.innerText;
-                tag.style.backgroundColor = "none";
-                speechSynthesis.speak(msg);
-                
-                let interval = setInterval(() => {
-                    if(!speechSynthesis.speaking){
-                        tag.style.removeProperty('background-color');
-                        clearInterval(interval);
-                    }
-                }, 100);
-                
-            });
-        });
-        alert("Screen Reader Activated");
-    });
-        
-    
-
-</script>
 </body>
 
 </html>
