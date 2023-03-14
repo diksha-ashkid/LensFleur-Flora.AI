@@ -1333,6 +1333,35 @@ body
         {
             new google.translate.TranslateElement("google_element");
         }
+
+        let msg = new SpeechSynthesisUtterance();
+    let voices = speechSynthesis.getVoices();
+    msg.voice = voices[0];
+    let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+    const myButton = document.getElementById("myButton");
+
+    myButton.addEventListener("click", () => {
+        
+
+        
+        tags.forEach((tag) => {
+            tag.addEventListener('click', (e) => {
+                
+                msg.text = e.target.innerText;
+                tag.style.backgroundColor = "none";
+                speechSynthesis.speak(msg);
+                
+                let interval = setInterval(() => {
+                    if(!speechSynthesis.speaking){
+                        tag.style.removeProperty('background-color');
+                        clearInterval(interval);
+                    }
+                }, 100);
+                
+            });
+        });
+        alert("Screen Reader Activated");
+    });
     </script>
 
 </body>

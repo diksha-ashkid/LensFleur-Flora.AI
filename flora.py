@@ -43,7 +43,7 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
 
 
 
-model = load_model(".static/model_finetuned.h5")
+model = load_model("model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
 def index():
@@ -147,7 +147,7 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("LensFleur-Flora.AI/static/" + prediction.title() + ".txt", "r") 
+    file = open("./static/" + prediction.title() + ".txt", "r") 
     if "Healthy" in prediction or "healthy" in prediction:
         basic = file.read()
         return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic)
