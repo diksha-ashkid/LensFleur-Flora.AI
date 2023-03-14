@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
-from keras.applications import VGG16
+
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
-from keras.utils import load_img
-from keras.utils import img_to_array
+
 from keras.models import load_model
-from keras.layers import Lambda
+
 import keras.applications.mobilenet_v2 as mobilenetv2
 import numpy as np
 import pandas as pd
@@ -47,9 +46,14 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
          'Tomato mosaic virus', 'Tomato healthy']
 
 
-model = load_model("LensFleur-Flora.AI\model_finetuned.h5")
+model = load_model("model_finetuned.h5")
+
+
 
 @app.route('/', methods = ['GET'])
+def index():
+    return render_template('index1.html')
+
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     msg = 'Log In To Continue'
@@ -100,6 +104,7 @@ def register():
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     return render_template('register.html', msg = msg)
+
 
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
