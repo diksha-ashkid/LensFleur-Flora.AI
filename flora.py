@@ -51,7 +51,7 @@ model = load_model("model_finetuned.h5")
 
 @app.route('/', methods = ['GET'])
 def index():
-    return render_template('index1.html')
+    return render_template('index.html')
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     msg = 'Log In To Continue'
@@ -150,7 +150,7 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("LensFleur-Flora.AI\static\\" + prediction.title() + ".txt", "r") 
+    file = open("./static//" + prediction.title() + ".txt", "r") 
     description = file.read()
     return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description)
 if __name__ == '__main__':
