@@ -103,6 +103,7 @@ def register():
         msg = 'Please fill out the form !'
     return render_template('register.html', msg = msg)
 
+
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     return render_template('index1.html')
