@@ -13,43 +13,6 @@
     <link rel="manifest" href="static/site.webmanifest">
 </head>
 <body id ="google_element">
-    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
-    <script>
-        function loadGoogleTranslate()
-        {
-            new google.translate.TranslateElement("google_element");
-        }
-    
-        let msg = new SpeechSynthesisUtterance();
-    let voices = speechSynthesis.getVoices();
-    msg.voice = voices[0];
-    let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
-    const myButton = document.getElementById("myButton");
-
-    
-    function speak(){
-            
-
-        
-        tags.forEach((tag) => {
-            tag.addEventListener('click', (e) => {
-                
-                msg.text = e.target.innerText;
-                tag.style.backgroundColor = "none";
-                speechSynthesis.speak(msg);
-                
-                let interval = setInterval(() => {
-                    if(!speechSynthesis.speaking){
-                        tag.style.removeProperty('background-color');
-                        clearInterval(interval);
-                    }
-                }, 100);
-                
-            });
-        });
-        alert("Screen Reader Activated");
-    };
-</script>
 <header>
     <input type="checkbox" name="" id="toggler">
     <label for="toggler" class="fas fa-bars"></label>
@@ -315,5 +278,38 @@
     </div>
     </div>
 </section>
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+    function loadGoogleTranslate()
+    {
+        new google.translate.TranslateElement("google_element");
+    }
+</script>
+<script>
+    let msg = new SpeechSynthesisUtterance();
+let voices = speechSynthesis.getVoices();
+msg.voice = voices[0];
+let tags = document.querySelectorAll('p,a,h1,h2,h3,h4,h5,h6,div'); // add more tags for you project
+const myButton = document.getElementById("myButton");
+function speak(){
+    tags.forEach((tag) => {
+        tag.addEventListener('click', (e) => {
+            
+            msg.text = e.target.innerText;
+            tag.style.backgroundColor = "none";
+            speechSynthesis.speak(msg);
+            
+            let interval = setInterval(() => {
+                if(!speechSynthesis.speaking){
+                    tag.style.removeProperty('background-color');
+                    clearInterval(interval);
+                }
+            }, 100);
+            
+        });
+    });
+    alert("Screen Reader Activated");
+};
+</script>
 </body>
 </html>
