@@ -516,3 +516,29 @@ header .fa-bars{
     }
 
 }
+.buttonvoice {
+    background-color: rgb(255, 255, 255);
+    color: rgb(3, 94, 40);
+    text-decoration: none;
+    border-radius: 60px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    overflow:hidden;
+    width: auto;
+    max-width: 40px; 
+    -webkit-transition: max-width 0.9s;
+    transition: max-width 0.9s;
+  }
+  
+  .buttonvoice:hover {
+      max-width: fit-content;
+      }
+  
+  
+  .textvoice {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    padding-right: 15px;
+  }

@@ -19,7 +19,37 @@
         {
             new google.translate.TranslateElement("google_element");
         }
-    </script>
+    
+        let msg = new SpeechSynthesisUtterance();
+    let voices = speechSynthesis.getVoices();
+    msg.voice = voices[0];
+    let tags = document.querySelectorAll('p,a,h1,h2,h3'); // add more tags for you project
+    const myButton = document.getElementById("myButton");
+
+    
+    function speak(){
+            
+
+        
+        tags.forEach((tag) => {
+            tag.addEventListener('click', (e) => {
+                
+                msg.text = e.target.innerText;
+                tag.style.backgroundColor = "none";
+                speechSynthesis.speak(msg);
+                
+                let interval = setInterval(() => {
+                    if(!speechSynthesis.speaking){
+                        tag.style.removeProperty('background-color');
+                        clearInterval(interval);
+                    }
+                }, 100);
+                
+            });
+        });
+        alert("Screen Reader Activated");
+    };
+</script>
 <header>
     <input type="checkbox" name="" id="toggler">
     <label for="toggler" class="fas fa-bars"></label>
@@ -31,8 +61,14 @@
         <a href="#ini">INORGANIC INSECTICIDES</a>
         <a href="#inop">INORGANIC PESTICIDES</a>
     </nav>
+    <a class="buttonvoice" id = "myButton" onclick="speak()">
+        <span class="fa fa-microphone" style="font-size: 25px; padding: 11px;"> </span>
+        <span class="textvoice">SCREEN READER</span>
+      </a>
 </header>
+ 
 <h1 class="heading"></h1>
+
 <section class="products" id="of">
 <h1 class="heading"> Organic <span>Products</span> </h1>
 <div class="container">
