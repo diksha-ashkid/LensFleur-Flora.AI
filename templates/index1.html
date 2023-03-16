@@ -1348,6 +1348,7 @@ body
             tag.addEventListener('click', (e) => {
                 
                 msg.text = e.target.innerText;
+                msg.rate = 1.3
                 tag.style.backgroundColor = "none";
                 speechSynthesis.speak(msg);
                 
