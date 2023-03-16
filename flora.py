@@ -1,13 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 from keras.models import load_model
-from keras.layers import Lambda
-import keras.applications.mobilenet_v2 as mobilenetv2
 import numpy as np
-import pandas as pd
 from exif import Image as im
 from geopy.geocoders import Nominatim #geolocation services
-import wikipedia #use wikipedia api
 import cv2
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -17,6 +13,7 @@ import re
 
 app = Flask(__name__)
 mysql = MySQL(app)
+
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -81,7 +78,7 @@ def register():
         email = request.form['email']
         city = request.form['city_state']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = % s', (username, ))
+        cursor.execute('SELECT * FROM accounts WHERE username = %s', (username, ))
         account = cursor.fetchone()
         if account:
             msg = 'Account already exists !'
@@ -121,6 +118,7 @@ def chat():
 @app.route('/', methods = ['POST'])
 def predict():
     # Get the data from the POST request.
+    cur = mysql.connection.cursor()
     image = request.files['image']
     # Make prediction using model loaded from disk as per the data.
     image_path = image.filename
@@ -150,7 +148,9 @@ def predict():
     file = open("./static/" + prediction.title() + ".txt", "r") 
     if "Healthy" in prediction or "healthy" in prediction:
         basic = file.read()
+       
         return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic)
+       
     else:
         description = file.read()
         basics = description.split("Symptoms:")
@@ -166,15 +166,21 @@ def predict():
         src = "Find out more at: "+inorganic[1]
 
 
-        cur = mysql.connection.cursor()
+        
         check = "select num_detection from detection_data where geo_location = %s and plant_disease = %s"
         num_detect = cur.execute(check, (geolocation, prediction))+1
-        cur.execute("INSERT INTO detection_data (username, plant_disease, geo_location, num_detection) VALUES (%s, %s, %s, %s)", (session['username'], prediction, geolocation, num_detect))
+        cur.execute("INSERT INTO detection_data  VALUES (NULL, %s, %s, %s, %s)", (session['username'], prediction, geolocation, num_detect,))
         mysql.connection.commit()
         cur.close()
 
-        return render_template('Result.html', prediction=prediction, geolocation=geolocation, description=description, basic = basic, 
-                           symptoms = symptoms, cycle = cycle, organics = organics, inorganics = inorganics, src = src)
+        assert1 = ""
+        if num_detect > 2 and "Healthy" not in prediction.title():
+            assert1 = "Data suggests there is a spike of "+prediction +" in "+str(geolocation.address)+". Please consult the appropriate authorities while we share our data to adequately combat the issue."
+        
+        return render_template('Result.html', prediction=prediction, geolocation=geolocation, basic=basic, symptoms=symptoms, cycle=cycle, organics=organics, inorganics=inorganics, src=src, 
+                               assert1 = assert1)
+    
+
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
     
