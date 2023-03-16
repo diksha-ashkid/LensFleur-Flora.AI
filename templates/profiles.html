@@ -34,10 +34,7 @@
 
     /* Cards colors */
     --card-main-color : whitesmoke;
-    --card-1-secondary-color: #53b711;
-    --card-2-secondary-color: #54b711;;
-    --card-3-secondary-color: #53b7117dF;
-    --card-4-secondary-color: #54b711;;
+    --card-1-secondary-color: #468120;
 }
 
 html{
@@ -215,7 +212,7 @@ body{
     flex-direction: column;
     /* background-color: yellow; */
     padding: 0 1.5em;
-    padding-top: 7em;
+    padding-top: 2em;
     padding-bottom: 1em;
     box-sizing: border-box;
 }
@@ -549,11 +546,13 @@ header .fa-bars{
             </label>
         </div>
         <div class="gow-img-div img-div">
-           <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/g13.png')}}"></a>
+           <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/bot1.webp')}}" ></a>
         </div>
         <div class="text-container">
             <h2 class="item-name">Dr ABC</h2>
-            <p class="date">Specilizations: Botany</p>
+            <p class="date">Botanist</p>
+            <p class="date" style="text-align: justify;">With over a decade of experience in the field of plant pathology, he is a go-to consultant
+                for effective solutions to plant disease problems and is currently leading a major research study on plant disease management. </p>
             <div class="pricing-and-cart">
                 <i class="fas fa-shopping-cart"></i>
             </div>
@@ -568,11 +567,13 @@ header .fa-bars{
             </label>
         </div>
         <div class="gow-img-div img-div">
-            <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/profic.png')}}"></a>
+            <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/bot2.jpg')}}"></a>
         </div>
         <div class="text-container">
             <h2 class="item-name">Dr DEF</h2>
-            <p class="date">Horticulture</p>
+            <p class="date">Horticulturist</p>
+            <p class="date" style="text-align: justify;">She has over 25 years of experience and her expertise in sustainable horticulture practices and plant physiology provides invaluable insights to clients, and she is 
+                currently leading a major research study on innovative approaches to sustainable crop production.</p>
         <div class="pricing-and-cart">
                 <i class="fas fa-shopping-cart"></i>
         </div>
@@ -587,17 +588,23 @@ header .fa-bars{
             </label>
         </div>
         <div class="gow-img-div img-div">
-            <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/g13.png')}}"></a>
+            <a  href = "{{url_for('chat')}}"><img src="{{url_for('static',filename='/bot3.jpg')}}"></a>
         </div>
         <div class="text-container">
             <h2 class="item-name">Dr GHI</h2>
-            <p class="date">Soil Characrteristics</p>
+            <p class="date">Plant Pathologist</p>
+            <p class="date" style="text-align: justify;">With over 15 years of experience in the field of plant pathology, and has expertise in plant physiology 
+                and pathogenic microorganisms makes her a highly regarded consultant for effective solutions to plant disease problems, offering invaluable insights to
+                 teams and clients.</p>
         <div class="pricing-and-cart">
                 <i class="fas fa-shopping-cart"></i>
         </div>
     </div>
     </div>
-   
+    <p class="heading" style="text-align: justify; font-size: 7px;">
+        The use of real human photos on this website is solely for representative purposes. 
+        These photos do not necessarily depict actual persons or events and are not intended to convey any specific message or endorsement.
+         Any resemblance to real individuals is purely coincidental.</p>
 </section>
 </body>
 </html>
