@@ -12,14 +12,19 @@ import re
 
 
 app = Flask(__name__)
-mysql = MySQL(app)
 
 
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = '35.200.223.139'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Aakash5122!'
+app.config['MYSQL_PASSWORD'] = 'LensFleur'
 app.config['MYSQL_DB'] = 'lensfleur'
 app.config['SECRET_KEY'] = 'lensfleur'
+mysql = MySQLdb.connect(
+    host=app.config['MYSQL_HOST'],
+    user=app.config['MYSQL_USER'],
+    passwd=app.config['MYSQL_PASSWORD'],
+    db=app.config['MYSQL_DB']
+)
 
 classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust', 
          'Apple healthy', 'Blueberry healthy', 
@@ -40,7 +45,7 @@ classes=['Apple scab', 'Apple Black rot', 'Cedar apple rust',
 
 
 
-model = load_model("model_finetuned.h5")
+model = load_model("LensFleur-Flora.AI/model_finetuned.h5") 
 
 @app.route('/', methods = ['GET'])
 def index():
@@ -51,7 +56,7 @@ def login():
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor = mysql.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE username = % s AND password = % s', (username, password, ))
         account = cursor.fetchone()
         if account:
@@ -77,7 +82,7 @@ def register():
         aadhaar = request.form['aadhaar']
         email = request.form['email']
         city = request.form['city_state']
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor = mysql.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE username = %s', (username, ))
         account = cursor.fetchone()
         if account:
@@ -92,7 +97,7 @@ def register():
             msg = 'Please fill out the form fully!'
         else:
             cursor.execute('INSERT INTO accounts VALUES (% s, % s, % s, %s, %s, %s)', (username, password, email, name, aadhaar,city, ))
-            mysql.connection.commit()
+            mysql.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
@@ -118,7 +123,7 @@ def chat():
 @app.route('/', methods = ['POST'])
 def predict():
     # Get the data from the POST request.
-    cur = mysql.connection.cursor()
+    cur = mysql.cursor()
     image = request.files['image']
     # Make prediction using model loaded from disk as per the data.
     image_path = image.filename
@@ -145,7 +150,7 @@ def predict():
         
     else:
         geolocation = "No GPS Data"
-    file = open("./static/" + prediction.title() + ".txt", "r") 
+    file = open("LensFleur-Flora.AI/static/" + prediction.title() + ".txt", "r") 
     if "Healthy" in prediction or "healthy" in prediction:
         basic = file.read()
        
@@ -170,7 +175,7 @@ def predict():
         check = "select num_detection from detection_data where geo_location = %s and plant_disease = %s"
         num_detect = cur.execute(check, (geolocation, prediction))+1
         cur.execute("INSERT INTO detection_data  VALUES (NULL, %s, %s, %s, %s)", (session['username'], prediction, geolocation, num_detect,))
-        mysql.connection.commit()
+        mysql.commit()
         cur.close()
 
         assert1 = ""
